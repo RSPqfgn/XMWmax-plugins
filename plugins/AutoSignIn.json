@@ -1,0 +1,8 @@
+{
+    "name": "自动签到",
+    "version": "1.0.0",
+    "author": "RSPqfgn",
+    "description": "在小码王首页自动点击签到按钮",
+    "enabled": true,
+    "init": "function() {\n    // 自动签到功能\n    setTimeout(function() {\n        if (window.location.href.includes('/w/index')) {\n            var signInButton = document.evaluate(\"//div [@class='goTaskCenter__h4wru' and text()='签到']\", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;\n            if (signInButton) {\n                function clickSignInButton() {\n                    if (document.body.textContent.includes(\"已领取\")) {\n                        clearInterval(signInInterval);\n                    } else {\n                        signInButton.click();\n                    }\n                }\n                var signInInterval = setInterval(clickSignInButton, 1000);\n            }\n        }\n    }, 1000); // 等待网页加载1秒后执行\n}"
+}
