@@ -1,8 +1,0 @@
-{
-    "name": "动态免打扰",
-    "version": "1.0.0",
-    "author": "RSPqfgn",
-    "description": "隐藏小码王动态红点",
-    "enabled": true,
-    "init": "function() {\n    // 动态免打扰功能\n    setInterval(function() {\n        var dynamicRedDotElement = document.querySelector('.dynamic-red-dot__3FSaW');\n        if (dynamicRedDotElement) {\n            dynamicRedDotElement.style.display = 'none'; // 隐藏动态红点元素\n        }\n    }, 1000);\n    \n    // 静默访问动态页面（由于插件系统限制，此功能无法完全还原）\n    // GM_xmlhttpRequest({\n    //     method: 'GET',\n    //     url: 'https://world.xiaomawang.com/w/dynamic',\n    //     onload: function() { console.log('Silent visit to dynamic page completed'); },\n    //     onerror: function() { console.log('Silent visit to dynamic page failed'); }\n    // });\n}"
-}
