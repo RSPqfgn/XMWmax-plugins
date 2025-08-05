@@ -1,0 +1,8 @@
+{
+    "name": "自动点击查看更多",
+    "version": "1.0.0",
+    "author": "RSPqfgn",
+    "description": "自动点击个人主页中查看更多（作品）按钮",
+    "enabled": true,
+    "init": "function() {\n    // 自动点击个人主页中查看更多按钮\n    setInterval(function() {\n        // 检查是否存在 \"查看更多\" 按钮\n        var seeMoreButton = document.querySelector('.seeMore__1QtpQ');\n        if (seeMoreButton && seeMoreButton.textContent.trim() === \"查看更多\") {\n            seeMoreButton.click(); // 点击按钮\n        }\n    }, 1000);\n}"
+}

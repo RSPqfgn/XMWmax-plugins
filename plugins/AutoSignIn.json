@@ -1,8 +1,8 @@
 {
     "name": "自动签到",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "author": "RSPqfgn",
     "description": "在小码王首页自动点击签到按钮",
     "enabled": true,
-    "init": "function() {\n    // 自动签到功能\n    setTimeout(function() {\n        if (window.location.href.includes('/w/index')) {\n            var signInButton = document.evaluate(\"//div [@class='goTaskCenter__h4wru' and text()='签到']\", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;\n            if (signInButton) {\n                function clickSignInButton() {\n                    if (document.body.textContent.includes(\"已领取\")) {\n                        clearInterval(signInInterval);\n                    } else {\n                        signInButton.click();\n                    }\n                }\n                var signInInterval = setInterval(clickSignInButton, 1000);\n            }\n        }\n    }, 1000); // 等待网页加载1秒后执行\n}"
+    "init": "function() {\n    // 持续监控并自动签到功能\n    function trySignIn() {\n        // 检查是否在首页\n        if (window.location.href.includes('/w/index')) {\n            // 查找签到按钮\n            var signInButton = document.evaluate(\"//div [@class='goTaskCenter__h4wru' and text()='签到']\", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;\n            if (signInButton) {\n                // 检查是否已经签到\n                if (!document.body.textContent.includes(\"已领取\")) {\n                    // 点击签到按钮\n                    signInButton.click();\n                }\n            }\n        }\n    }\n\n    // 每隔3秒检查一次签到状态\n    setInterval(trySignIn, 3000);\n\n    // 页面加载完成后立即执行一次\n    setTimeout(trySignIn, 1000);\n\n    // 监听页面变化\n    let lastUrl = location.href; \n    new MutationObserver(() => {\n        const url = location.href;\n        if (url !== lastUrl) {\n            lastUrl = url;\n            // URL变化后稍等一段时间再尝试签到\n            setTimeout(trySignIn, 1500);\n        }\n    }).observe(document, { subtree: true, childList: true });\n}"
 }

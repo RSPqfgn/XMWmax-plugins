@@ -1,0 +1,7 @@
+{
+    "name": "动态免打扰",
+    "version": "1.0.0",
+    "author": "RSPqfgn",
+    "description": "隐藏小码王动态红点",
+    "code": ".dynamic-red-dot__3FSaW {\n    display: none !important;\n}"
+}

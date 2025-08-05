@@ -1,0 +1,8 @@
+{
+    "name": "自动领取奖励",
+    "version": "1.0.0",
+    "author": "RSPqfgn",
+    "description": "自动领取任务奖励",
+    "enabled": true,
+    "init": "function() {\n    // 自动领取奖励功能\n    function clickReceive() {\n        var receiveButton = document.querySelector(\"div.taskAction__3nOcF.taskReceiveReward__16CiZ\");\n        if (receiveButton && receiveButton.textContent === \"领取\") {\n            receiveButton.click();\n        }\n    }\n    \n    // 持续检查领取奖励元素是否存在\n    setInterval(function() {\n        clickReceive(); // 如果找到元素则执行领取\n    }, 1000);\n}"
+}

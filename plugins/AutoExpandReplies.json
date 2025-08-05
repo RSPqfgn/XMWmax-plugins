@@ -1,0 +1,8 @@
+{
+    "name": "自动展开子回复",
+    "version": "1.0.0",
+    "author": "RSPqfgn",
+    "description": "自动点击展开子回复按钮",
+    "enabled": true,
+    "init": "function() {\n    // 自动展开子回复功能\n    setInterval(function() {\n        var replyMoreButton = document.evaluate(\"//span[contains(@class, 'reply-more-button-text__iB2jQ')]\", document, null, XPathResult.ANY_TYPE, null);\n        var button = replyMoreButton.iterateNext();\n        while (button) {\n            button.click();\n            button = replyMoreButton.iterateNext();\n        }\n    }, 500);\n}"
+}

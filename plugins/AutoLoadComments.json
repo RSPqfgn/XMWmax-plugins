@@ -1,0 +1,8 @@
+{
+    "name": "自动展开评论",
+    "version": "1.0.0",
+    "author": "RSPqfgn",
+    "description": "自动点击展开评论按钮",
+    "enabled": true,
+    "init": "function() {\n    // 自动展开评论功能\n    setInterval(function() {\n        var moreCommentsButton = document.querySelector('span.iconfont.icon-shequ-xiala.more-comment-icon__2Bxj9');\n        if (moreCommentsButton) {\n            moreCommentsButton.click();\n        }\n    }, 500);\n}"
+}
