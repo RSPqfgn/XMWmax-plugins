@@ -1,0 +1,8 @@
+{
+    "name": "移除魔力测评",
+    "version": "1.0.0",
+    "author": "RSPqfgn",
+    "description": "隐藏右下角魔力测评元素",
+    "enabled": true,
+    "init": "function() {\n    // 移除魔力测评功能\n    setInterval(function() {\n        // 隐藏 outer__3SbsJ 元素\n        var outerElement = document.querySelector('.outer__3SbsJ');\n        if (outerElement) {\n            outerElement.style.display = 'none'; // 隐藏魔力测评元素\n        }\n    }, 1000);\n}"
+}

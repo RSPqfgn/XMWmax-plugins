@@ -1,0 +1,8 @@
+{
+    "name": "移除头像框",
+    "version": "1.0.0",
+    "author": "RSPqfgn",
+    "description": "隐藏用户头像框",
+    "enabled": true,
+    "init": "function() {\n    // 移除头像框功能\n    setInterval(function() {\n        // 隐藏所有 headDecoration__3FOFH 元素\n        var avatarFrameElements = document.querySelectorAll('.headDecoration__3FOFH');\n        avatarFrameElements.forEach(function(element) {\n            element.style.display = 'none'; // 隐藏头像框元素\n        });\n        // 隐藏所有 decorationImg__76Jm7 元素\n        var decorationImgElements = document.querySelectorAll('.decorationImg__76Jm7');\n        decorationImgElements.forEach(function(element) {\n            element.style.display = 'none'; // 隐藏头像框元素\n        });\n    }, 100);\n}"
+}

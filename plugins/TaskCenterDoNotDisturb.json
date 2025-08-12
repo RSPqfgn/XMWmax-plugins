@@ -1,0 +1,8 @@
+{
+    "name": "任务中心免打扰",
+    "version": "1.0.0",
+    "author": "RSPqfgn",
+    "description": "隐藏任务中心红点元素",
+    "enabled": true,
+    "init": "function() {\n    // 我的任务免打扰功能\n    setInterval(function() {\n        // Xpath定位元素\n        const taskCenterBadge = document.evaluate(\"//*[@id=\\\"header\\\"]/div/div/div[1]/div/div/div/ul/li[4]/a/span/sup\", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;\n        const otherBadge = document.evaluate(\"//*[@id=\\\"__next\\\"]/div[2]/div[2]/div[2]/div[3]/div[1]/div[2]/span/sup\", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;\n        // 隐藏元素\n        if (taskCenterBadge) {\n            taskCenterBadge.style.display = 'none'; // 隐藏任务中心元素\n        }\n        if (otherBadge) {\n            otherBadge.style.display = 'none'; // 隐藏任务中心元素\n        }\n    }, 500);\n}"
+}
