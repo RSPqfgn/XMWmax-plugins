@@ -1,0 +1,8 @@
+{
+    "name": "消息免打扰",
+    "version": "1.0.0",
+    "author": "RSPqfgn",
+    "description": "隐藏消息红点提醒",
+    "enabled": true,
+    "init": "function() {\n    // 消息免打扰功能\n    setInterval(function() {\n        var messageCountElement = document.querySelector('.message-count__2M-on');\n        if (messageCountElement) {\n            messageCountElement.style.display = 'none'; // 隐藏消息计数元素\n        }\n    }, 1000);\n\n    // 静默访问消息页面\n    if (typeof GM_xmlhttpRequest !== 'undefined') {\n        GM_xmlhttpRequest({\n            method: 'GET',\n            url: 'https://world.xiaomawang.com/w/message',\n            onload: function() { console.log('Silent visit to message page completed'); },\n            onerror: function() { console.log('Silent visit to message page failed'); }\n        });\n    }\n}"
+}

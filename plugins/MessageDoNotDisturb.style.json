@@ -1,7 +1,0 @@
-{
-    "name": "消息免打扰",
-    "version": "1.0.0",
-    "author": "RSPqfgn",
-    "description": "隐藏小码王消息红点",
-    "code": ".message-count__2M-on {\n    display: none !important;\n}"
-}
