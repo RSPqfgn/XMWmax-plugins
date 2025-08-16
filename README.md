@@ -1,0 +1,2 @@
+# XMWmax 官方插件市场
+XMWmax官方插件市场仓库，可以将按XMWmax标准编写的插件上传到仓库的plugins文件夹中
